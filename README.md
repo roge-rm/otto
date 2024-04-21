@@ -81,6 +81,16 @@ WantedBy=multi-user.target
 ```
 13. Reload the systemctl daemon `sudo systemctl daemon-reload`
 14. Enable `sudo systemctl enable midi.service` the service.
-15. Reboot the device `reboot`
+15. Reboot the device `sudo reboot`
 
-At this point USB MIDI routing should be working as expected, you can plug and unplug devices as desired and they should be automatically connected to each other
+At this point USB MIDI routing should be working as expected, you can plug and unplug devices as desired and they should be automatically connected to each other.<br>
+In order to prevent SD card corruption you will want to set it up as read-only.
+
+16. Reconnect to the device via SSH
+17. Clone the rpi-readonly git `git clone https://gitlab.com/larsfp/rpi-readonly`
+18. Enter the directory `cd rpi-readonly` and run the setup `sudo ./setup.sh`
+
+When setup is complete your install will be set to read only mode. You are now ready to make music!
+
+**If you want to make changes in the future you can turn read/write mode on with the command `rw` <br> 
+When done making changes you can turn read-only mode back on using the command `ro`**
