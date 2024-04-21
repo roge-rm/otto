@@ -85,7 +85,8 @@ WantedBy=multi-user.target
 14. Enable `sudo systemctl enable midi.service` the service.
 15. Reboot the device `sudo reboot`
 
-At this point USB MIDI routing should be working as expected, you can plug and unplug devices as desired and they should be automatically connected to each other.<br>
+At this point USB MIDI routing should be working as expected, you can plug and unplug devices as desired and they should be automatically connected to each other.
+
 In order to prevent SD card corruption you will want to set it up as read-only.
 
 16. Reconnect to the device via SSH
