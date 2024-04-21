@@ -3,11 +3,13 @@
 
 <img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_3.jpg width=800>
 
-USB MIDI is great but a real pain in the ass when you're away from a computer. This project aims to fix that by providing a cheap and simple way to DIY yourself out of the connection problem.
+USB MIDI is great but a real pain in the ass when you're away from a computer. This project aims to fix that by providing a cheap and simple way to DIY yourself out of the connection problem. 
+
+Otto automatically connects USB MIDI devices to each other while providing its own power. Use it to connect your MIDI controller and groovebox (OP1, Deluge, M8), your grooveboxes to each other (M8 and OP1, anyone?), or as the host to a larger setup. As Otto brings his own battery all you need is the devices and the same cables you'd use to connect them to your computer. Easy peasy.
 
 ### Parts required:
-* <a href=https://geekworm.com/products/x306>Geekworm X306 USB Hub/UPS Expansion board for Raspberry Pi Zero W/2W</a> (heatsink optional?)
-* Raspberry Pi Zero W or 2W
+* <a href=https://geekworm.com/products/x306>Geekworm X306 USB Hub/UPS Expansion board for Raspberry Pi Zero W/2W</a>
+* Raspberry Pi Zero 2W or W
 * 4GB or larger microSD card
 * 18650 battery
 
