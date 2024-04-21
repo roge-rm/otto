@@ -59,7 +59,7 @@ ports.each do |p1|
   end
 end
 ```
-7. Save and exit the file (Ctrl+X, then Y)
+7. Save and exit the file (Ctrl+X, then Y, then enter)
 8. Set permissions on the file `sudo chmod +x /usr/local/bin/connectall.rb`
 9. Connect one or more USB devices to otto and issue `connectall.rb` to perform a test connection<br>
 Check the results with `aconnect -l`, it should show connected devices
