@@ -24,9 +24,63 @@ Install the microSD card (see card setup below) and 18650 battery and you're rea
 
 ### Card Setup:
 
-I will provide a flashable image sometime in the future but in the meantime you can set this up manually:
+I will provide a flashable image sometime in the future but in the meantime you can set this up manually. Steps are taken from <a href=http://hunke.ws/posts/orange-pi-usb-midi-host/>this guide for Orange Pi</a> and <a href=https://neuma.studio/raspberry-pi-as-usb-bluetooth-midi-host/>this guide for Raspberry Pi 3/4</a>:
 
 1. Download the <a href=https://www.raspberrypi.com/software/>Raspberry Pi Imager</a> and set up the SD card. Choose the Legacy 32 Lite image (no desktop is needed). You will need to enter in a username/password, set up wifi, and enable SSH access (on the second tab) in order to do finish the setup. Setting the hostname can also be helpful.
 2. Insert the SD in your assembled otto and boot it up. It will take some time to connect to your wifi, you can watch your router's DHCP logs to see what IP it pulls or try to ping the hostname you set until you see a response.
 3. Connect to the pi using SSH
-4. Complete setup (steps coming)
+4. Perform `sudo apt update` and `sudo apt upgrade` to update all current packages
+5. Perform `sudo apt install git ruby` to install required packages
+6. Create and edit the connection script `sudo nano /usr/local/bin/connectall.rb`<br>
+Paste the following code as the contents:
+```
+#!/usr/bin/ruby
+#
+
+t = `aconnect -i -l`
+ports = []
+t.lines.each do |l|
+  /client (\d*)\:/=~l
+  port = $1
+  # we skip empty lines and the "Through" port
+  unless $1.nil? || $1 == '0' || /Through/=~l
+    ports << port
+    #names << name
+  end  
+end
+
+ports.each do |p1|
+  ports.each do |p2|
+    unless p1 == p2 # probably not a good idea to connect a port to itself
+      system  "aconnect #{p1}:0 #{p2}:0"
+    end
+  end
+end
+```
+7. Save and exit the file (Ctrl+X, then Y)
+8. Set permissions on the file `sudo chmod +x /usr/local/bin/connectall.rb`
+9. Connect one or more USB devices to otto and issue `connectall.rb` to perform a test connection<br>
+Check the results with `aconnect -l`, it should show connected devices
+10. Create a udev rule to run the script when USB devices are connected `sudo nano /etc/udev/rules.d/33-midiusb.rules`<br>
+Paste the following as contents:
+```
+ACTION=="add|remove", SUBSYSTEM=="usb", DRIVER=="usb", RUN+="/usr/local/bin/connectall.rb"
+```
+11. Restart the udev service to enable `sudo udevadm control --reload` and `sudo service udev restart`
+12. Create a systemd service to configure any attached devices at boot `sudo nano /lib/systemd/system/midi.service`
+Paste the following as contents:
+```
+[Unit]
+Description=Initial USB MIDI connect
+
+[Service]
+ExecStart=/usr/local/bin/connectall.rb
+
+[Install]
+WantedBy=multi-user.target
+```
+13. Reload the systemctl daemon `sudo systemctl daemon-reload`
+14. Enable `sudo systemctl enable midi.service` the service.
+15. Reboot the device `reboot`
+
+At this point USB MIDI routing should be working as expected, you can plug and unplug devices as desired and they should be automatically connected to each other
