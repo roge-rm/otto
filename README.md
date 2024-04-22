@@ -45,6 +45,8 @@ It has been tested on a Raspberry Pi Zero 2W as well as a Raspberry Pi 2B.
 Extract the .img file from the zip and write it to an 8GB or larger microSD using <a href=https://rufus.ie/en/>Rufus</a> or <a href=https://win32diskimager.org/>Win32 Disk Imager</a> for Windows, or dd on linux/mac.
 
 #### Manual Setup:
+If you don't want to use the preconfigured image above you can set this up manually.
+
 Steps are taken from <a href=http://hunke.ws/posts/orange-pi-usb-midi-host/>this guide for Orange Pi</a> and <a href=https://neuma.studio/raspberry-pi-as-usb-bluetooth-midi-host/>this guide for Raspberry Pi 3/4</a>:
 
 1. Download the <a href=https://www.raspberrypi.com/software/>Raspberry Pi Imager</a> and set up the SD card. Choose the Legacy 32 Lite image (no desktop is needed). You will need to enter in a username/password, set up wifi, and enable SSH access (on the second tab) in order to finish the setup. Setting the hostname can also be helpful.
