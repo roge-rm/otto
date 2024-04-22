@@ -7,10 +7,11 @@ USB MIDI is great but a real pain in the ass when you're away from a computer. T
 
 Otto automatically connects USB MIDI devices to each other while providing its own power. Use it to connect your MIDI controller and groovebox (OP1, Deluge, M8), your grooveboxes to each other (M8 and OP1, anyone?), or as the host to a larger setup. As Otto brings his own battery all you need is the devices and the same cables you'd use to connect them to your computer. Easy peasy.
 
+
 ### Parts required:
 * <a href=https://geekworm.com/products/x306>Geekworm X306 USB Hub/UPS Expansion board for Raspberry Pi Zero W/2W</a>
 * Raspberry Pi Zero 2W or W
-* 4GB or larger microSD card
+* 8GB or larger microSD card for preconfigured image (4GB required for manual setup)
 * 18650 battery
 
  <img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_1.jpg width=400>
@@ -30,7 +31,14 @@ Usage is straight forward. Turn the power on, wait ~10-30 seconds (depending on 
 
 ### Card Setup:
 
-I will provide a flashable image sometime in the future but in the meantime you can set this up manually. Steps are taken from <a href=http://hunke.ws/posts/orange-pi-usb-midi-host/>this guide for Orange Pi</a> and <a href=https://neuma.studio/raspberry-pi-as-usb-bluetooth-midi-host/>this guide for Raspberry Pi 3/4</a>:
+#### Preconfigured Image:
+
+Download the latest preconfigured image <a href=https://github.com/roge-rm/otto/releases/tag/otto-legacy32lite-v01>at this link</a>.
+
+Extract the .img file from the zip and write it to an 8GB or larger microSD using <a href=https://rufus.ie/en/>Rufus</a> or <a href=https://win32diskimager.org/>Win32 Disk Imager</a> for Windows, or dd on linux/mac.
+
+#### Manual Setup:
+Steps are taken from <a href=http://hunke.ws/posts/orange-pi-usb-midi-host/>this guide for Orange Pi</a> and <a href=https://neuma.studio/raspberry-pi-as-usb-bluetooth-midi-host/>this guide for Raspberry Pi 3/4</a>:
 
 1. Download the <a href=https://www.raspberrypi.com/software/>Raspberry Pi Imager</a> and set up the SD card. Choose the Legacy 32 Lite image (no desktop is needed). You will need to enter in a username/password, set up wifi, and enable SSH access (on the second tab) in order to do finish the setup. Setting the hostname can also be helpful.
 2. Insert the SD in your assembled Otto and boot it up. It will take some time to connect to your wifi, you can watch your router's DHCP logs to see what IP it pulls or try to ping the hostname you set until you see a response.
