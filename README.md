@@ -10,22 +10,27 @@ Otto automatically connects USB MIDI devices to each other while providing its o
 **The preconfigured image provided below should work on any Raspberry Pi capable of running the 32 bit/legacy Raspberry Pi OS.**<br>
 If you have an older Pi, a microSD card, and some way of providing power, you have all you need to run a USB MIDI router of your own!
 
+<img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_1.jpg width=400>
+
 ### Parts required:
 * <a href=https://geekworm.com/products/x306>Geekworm X306 USB Hub/UPS Expansion board for Raspberry Pi Zero W/2W</a>
 * Raspberry Pi Zero 2W or W
 * 8GB or larger microSD card for preconfigured image (4GB required for manual setup)
 * 18650 battery
+* <a href=https://github.com/roge-rm/otto/blob/main/housing/HOUSING.md>3D printed housing</a> (not _required_ for functionality but maybe for the real world)
 
- <img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_1.jpg width=400>
+<img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_2.jpg width=400>
 
 ### Assembly: 
 
- <img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_2.jpg width=400>
+1. Mount the heatsink to the Pi by cutting the thermal tape to the size of the SOC and using it to hold the heatsink in place. 
+2. Mount the Pi to the X306 board (USB and HDMI ports pointed away from the battery) with the provided screws.
+3. <a href=https://github.com/roge-rm/otto/blob/main/housing/HOUSING.md>Install the X306 board in the housing</a>, if you have decided to give Otto a home.
+4. Prepare the SD card, see [card setup](#card-setup) below. <br>
+You will need an 8GB or larger microSD card to use the preconfigured image, or 4GB or larger to manually set it up yourself.
+5. Insert the microSD card into your completed Otto and power it on using the button on the front. You're ready to go! 
 
-Mount the heatsink to the Pi by cutting the thermal tape to the size of the SOC and using it to hold the heatsink in place. 
-Mount the Pi to the X306 board (USB and HDMI ports pointed away from the battery) with the provided screws. 
-
-Install the microSD card (see card setup below) and 18650 battery and you're ready to go!
+<img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_5.jpg width=400>
 
 ### Usage:
 
