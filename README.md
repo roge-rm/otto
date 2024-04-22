@@ -25,10 +25,11 @@ If you have an older Pi, a microSD card, and some way of providing power, you ha
 
 1. Mount the heatsink to the Pi by cutting the thermal tape to the size of the SOC and using it to hold the heatsink in place. 
 2. Mount the Pi to the X306 board (USB and HDMI ports pointed away from the battery) with the provided screws.
-3. <a href=https://github.com/roge-rm/otto/blob/main/housing/HOUSING.md>Install the X306 board in the housing</a>, if you have decided to give Otto a home.
-4. Prepare the SD card, see [card setup](#card-setup) below. <br>
+3. Mount the battery. 
+4. <a href=https://github.com/roge-rm/otto/blob/main/housing/HOUSING.md>Install the X306 board in the housing</a>, if you have decided to give Otto a home.
+5. Prepare the SD card, see [card setup](#card-setup) below. <br>
 You will need an 8GB or larger microSD card to use the preconfigured image, or 4GB or larger to manually set it up yourself.
-5. Insert the microSD card into your completed Otto and power it on using the button on the front. You're ready to go! 
+6. Insert the microSD card into your completed Otto and power it on using the button on the front. You're ready to go! 
 
 <img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_5.jpg width=400>
 
