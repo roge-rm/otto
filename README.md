@@ -24,6 +24,10 @@ Mount the Pi to the X306 board (USB and HDMI ports pointed away from the battery
 
 Install the microSD card (see card setup below) and 18650 battery and you're ready to go!
 
+### Usage:
+
+Usage is straight forward. Turn the power on, wait ~10-30 seconds (depending on speed of SD card), plug in USB devices you'd like to connect and voila! Turn the device off when done, as you've set the SD to read only there's no need to do a full shut down.
+
 ### Card Setup:
 
 I will provide a flashable image sometime in the future but in the meantime you can set this up manually. Steps are taken from <a href=http://hunke.ws/posts/orange-pi-usb-midi-host/>this guide for Orange Pi</a> and <a href=https://neuma.studio/raspberry-pi-as-usb-bluetooth-midi-host/>this guide for Raspberry Pi 3/4</a>:
