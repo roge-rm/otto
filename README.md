@@ -1,7 +1,7 @@
 # otto
 ##### a standalone battery (and pi) powered USB MIDI host & router
 
-<img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_3.jpg width=800>
+<img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_launchctl_deluge_exquis.jpg width=800>
 
 USB MIDI is great but a real pain in the ass when you're away from a computer. This project aims to fix that by providing a cheap and simple way to DIY yourself out of the connection problem. 
 
@@ -31,7 +31,7 @@ If you have an older Pi, a microSD card, and some way of providing power, you ha
 You will need an 8GB or larger microSD card to use the preconfigured image, or 4GB or larger to manually set it up yourself.
 6. Insert the microSD card into your completed Otto and power it on using the button on the front. You're ready to go! 
 
-<img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_5.jpg width=400>
+<img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto2_6.jpg width=400>
 
 ### Usage:
 
