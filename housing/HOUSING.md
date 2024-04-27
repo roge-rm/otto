@@ -5,7 +5,7 @@ Parts needed to assemble:
 * filament - I used PLA, you can use whatever you're comfortable with
 * 4 x m3\*4.6\*4.0 heat insert nuts
 * 4 x m3\*5 bolts
-* 4 x m2.5\*5 bolts
+* 4 x m2.5\*6 bolts
 * 2 x m2.5\*8 bolts
 * 2 x m2.5 nuts
 
