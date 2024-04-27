@@ -8,7 +8,6 @@ USB MIDI is great but a real pain in the ass when you're away from a computer. T
 Otto automatically connects USB MIDI devices to each other while providing its own power. Use it to connect your MIDI controller and groovebox (OP1, Deluge, M8), your grooveboxes to each other (M8 and OP1, anyone?), or as the host to a larger setup. As Otto brings his own battery all you need is the devices and the same cables you'd use to connect them to your computer. Easy peasy.
 
 **The preconfigured image provided below should work on any Raspberry Pi capable of running the 32 bit/legacy Raspberry Pi OS.**<br>
-If you have an older Pi, a microSD card, and some way of providing power, you have all you need to run a USB MIDI router of your own!
 
 <img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_1.jpg width=400>
 
