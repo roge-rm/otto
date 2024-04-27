@@ -18,7 +18,7 @@ This housing has thinner holes so you can force bolts into them and make your ow
 <img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_8.jpg width=400>
 
 3. Mount the X306 board to the bottom housing<br>
-The 4 m2.5\*5 bolts grab onto the same posts the Pi mounted to (but from the bottom).<br>
+The 4 m2.5\*6 bolts grab onto the same posts the Pi mounted to (but from the bottom).<br>
 The 2 m2.5\*8 bolts go through the holes on either side of the USB ports/power switch and are held in place by the m2.5 nuts.
 
 <img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_6.jpg width=400> <img src=https://raw.githubusercontent.com/roge-rm/otto/main/pictures/otto_7.jpg width=400>
