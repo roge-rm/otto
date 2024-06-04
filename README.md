@@ -56,7 +56,7 @@ If you don't want to use the preconfigured image above you can set this up manua
 
 Steps are taken from <a href=http://hunke.ws/posts/orange-pi-usb-midi-host/>this guide for Orange Pi</a> and <a href=https://neuma.studio/raspberry-pi-as-usb-bluetooth-midi-host/>this guide for Raspberry Pi 3/4</a>:
 
-1. Download the <a href=https://www.raspberrypi.com/software/>Raspberry Pi Imager</a> and set up the SD card. Choose the Legacy 32 Lite image (no desktop is needed). You will need to enter in a username/password, set up wifi, and enable SSH access (on the second tab) in order to finish the setup. Setting the hostname can also be helpful.
+1. Download the <a href=https://www.raspberrypi.com/software/>Raspberry Pi Imager</a> and set up the SD card. Choose the 32 Bookworm lite image (no desktop is needed). You will need to enter in a username/password, set up wifi, and enable SSH access (on the second tab) in order to finish the setup. Setting the hostname can also be helpful.
 2. Insert the SD in your assembled Otto and boot it up. It will take some time to connect to your WIFI, you can watch your router's DHCP logs to see what IP it pulls or try to ping the hostname you set until you see a response.
 3. Connect to the Pi using SSH
 4. Perform `sudo apt update` and `sudo apt upgrade` to update all current packages
