@@ -110,16 +110,73 @@ ExecStart=/usr/local/bin/connectall.rb
 WantedBy=multi-user.target
 ```
 13. Reload the systemctl daemon `sudo systemctl daemon-reload`
-14. Enable `sudo systemctl enable midi.service` the service.
-15. Reboot the device `sudo reboot`
+14. Enable the service `sudo systemctl enable midi.service` and start it `sudo systemctl start midi.service`
+15. Edit the crontab to run the connectall script upon boot, connecting any devices that were already connected ahead of time `crontab -e`
+Select the nano editor if prompted and you are not sure.
+16. Add the following to the bottom of the crontab:
+```
+@reboot ruby /usr/local/bin/connectall.rb &
+```
 
 At this point USB MIDI routing should be working as expected, you can plug and unplug devices as desired and they should be automatically connected to each other.
 
+#### BLE MIDI:
+If you'd like to add BLE (Bluetooth Low Energy) MIDI support you'll need to <a href=https://github.com/arkq/bluez-alsa/wiki/Installation-from-source>compile and install BlueAlsa</a>. The standard bluetooth stack does not support BLE MIDI so we will add it in.
+
+17. Install required packages to compile BlueALSA:
+```
+sudo apt-get install git automake build-essential libtool pkg-config python3-docutils
+sudo apt-get install libasound2-dev libbluetooth-dev libdbus-1-dev libglib2.0-dev libsbc-dev
+```
+18. Download, compile, and install bluez-alsa from source
+```
+mkdir ~/dev
+git clone https://github.com/arkq/bluez-alsa.git /home/otto/dev/bluez-alsa
+cd ~/dev/bluez-alsa
+autoreconf --install --force
+mkdir build && cd build
+../configure --enable-systemd --enable-midi
+make
+sudo make install
+```
+19. Create a udev rule to run the connectall script when the BLE server is started 
+`sudo nano /etc/udev/rules.d/44-bt.rules`
+```
+ACTION=="add|remove", SUBSYSTEM=="bluetooth", RUN+="/usr/local/bin/connectall.rb"
+```
+20. Restart the udev service to enable `sudo udevadm control --reload` and `sudo service udev restart`
+21. Create a systemd service to enable BLE MIDI server at boot `sudo nano /lib/systemd/system/btmidi.service`
+```
+[Unit]
+Description=MIDI Bluetooth connect
+After=bluetooth.target sound.target multi-user.target
+Requires=bluetooth.target sound.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/home/otto
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=btmidi
+Restart=always
+ExecStart=/usr/bin/bluealsad -p midi --midi-advertisement
+
+[Install]
+WantedBy=multi-user.target
+```
+22. Enable the service `sudo systemctl enable btmidi.service` and start it `sudo systemctl start btmidi.service`
+23. You should now be able to scan for BLE MIDI devices (eg from your iPad, from BLE MIDI app on Android) and see an 'otto' device available to connect to
+
+At this point BLE MIDI should be set up and working as expected, and devices that connect to the 'otto' device will be able to exchange MIDI data with any devices connected to the Pi.
+
+#### Read-Only Mode:
 In order to prevent SD card corruption you will want to set it up as read-only.
 
-16. Reconnect to the device via SSH
-17. Clone the rpi-readonly git `git clone https://gitlab.com/larsfp/rpi-readonly`
-18. Enter the directory `cd rpi-readonly` and run the setup `sudo ./setup.sh`
+24. Reconnect to the device via SSH
+25. Clone the rpi-readonly git `git clone https://gitlab.com/larsfp/rpi-readonly`
+26. Enter the directory `cd rpi-readonly` and run the setup `sudo ./setup.sh`
 
 When setup is complete your install will be set to read only mode. You are now ready to make music!
 
