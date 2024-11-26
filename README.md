@@ -123,6 +123,8 @@ At this point USB MIDI routing should be working as expected, you can plug and u
 #### BLE MIDI:
 If you'd like to add BLE (Bluetooth Low Energy) MIDI support you'll need to <a href=https://github.com/arkq/bluez-alsa/wiki/Installation-from-source>compile and install BlueALSA</a>. The standard bluetooth stack does not support BLE MIDI so we will add it in.
 
+Skip to [Read-Only Mode Setup](#read-only-mode) if you don't want to configure BLE.
+
 17. Install required packages to compile BlueALSA:
 ```
 sudo apt-get install git automake build-essential libtool pkg-config python3-docutils
