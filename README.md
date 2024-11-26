@@ -121,7 +121,7 @@ Select the nano editor if prompted and you are not sure.
 At this point USB MIDI routing should be working as expected, you can plug and unplug devices as desired and they should be automatically connected to each other.
 
 #### BLE MIDI:
-If you'd like to add BLE (Bluetooth Low Energy) MIDI support you'll need to <a href=https://github.com/arkq/bluez-alsa/wiki/Installation-from-source>compile and install BlueAlsa</a>. The standard bluetooth stack does not support BLE MIDI so we will add it in.
+If you'd like to add BLE (Bluetooth Low Energy) MIDI support you'll need to <a href=https://github.com/arkq/bluez-alsa/wiki/Installation-from-source>compile and install BlueALSA</a>. The standard bluetooth stack does not support BLE MIDI so we will add it in.
 
 17. Install required packages to compile BlueALSA:
 ```
