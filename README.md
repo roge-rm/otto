@@ -42,7 +42,7 @@ Usage is straight forward. Turn the power on, wait ~10-30 seconds (depending on 
 
 #### Preconfigured Image:
 
-Download the latest preconfigured image <a href=https://github.com/roge-rm/otto/releases/tag/otto-legacy32lite-v01>at this link</a>.
+Download the latest preconfigured image [at this link](https://github.com/roge-rm/otto/releases).
 
 ```
 This should work on any Raspberry Pi that can run a 32 Bit Raspberry Pi OS.
