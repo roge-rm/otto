@@ -14,7 +14,7 @@ Otto automatically connects USB MIDI devices to each other while providing its o
 **I have been notified that the Geekworm X306 board has been updated to remove the USB ports and is no longer an option for this project. This will work with any USB/battery hat (or combination thereof) that can be used with a Raspberry Pi so if you find another battery and another USB hub or some combination of those you can still make something like this - just not with the housing I designed.**
 
 ### Parts required:
-* Geekworm X306 USB Hub/UPS Expansion board for Raspberry Pi Zero W/2W - **Rev 1.1 ONLY - newer revisions have removed the USB A ports**
+* Geekworm X306 USB Hub/UPS Expansion board for Raspberry Pi Zero W/2W - **Rev 1.1/1.2 ONLY - newer revisions have removed the USB A ports**
 * Raspberry Pi Zero 2W or W
 * 8GB or larger microSD card for preconfigured image (4GB required for manual setup)
 * 18650 battery
